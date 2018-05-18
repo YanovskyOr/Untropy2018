@@ -1,0 +1,79 @@
+<div mdbModal #manageServerModal="mdb-modal" class="modal fade" id="manageServerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Header-->
+            <div class="modal-header indigo white-text">
+                <h4 class="title"><i class="fa fa-list"></i>Security Compliancy Checks</h4>
+                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="manageServerModal.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body mb-0" >
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        GRUB Password
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Kdump Disabled
+                        <span class="badge badge-danger badge-pill">Fail</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        SELinux Enabled
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        NOZEROCONF
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        IPv6 Disabled
+                        <span class="badge badge-warning badge-pill">Warning</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        kernel.exec-shield Enabled
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        randomize_va_space
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Accept souce route Disabled
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Secure redirects Disabled
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        User with full sudo
+                        <span class="badge badge-danger badge-pill">Fail</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Wireless driver Disabled
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        /tmp noexec
+                        <span class="badge badge-success badge-pill">Ok</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="modal-footer">
+                <small class="text-muted">Last updated 5 mins ago</small>
+              </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+<div class="btn-group btn-group-sm" role="group" aria-label="">
+<button type="button" class="btn btn-white btn-xs" (click)="manageServerModal.show()">
+    <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#673AB7;"></i>
+  </button>
+  </div>

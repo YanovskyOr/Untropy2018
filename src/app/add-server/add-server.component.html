@@ -1,0 +1,53 @@
+<div mdbModal #addServerModal="mdb-modal" class="modal fade" id="addServerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Header-->
+            <div class="modal-header indigo white-text">
+                <h4 class="title"><i class="fa fa-plus"></i><i class="fa fa-server"></i> Add Server</h4>
+                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="addServerModal.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body mb-0" >
+                <div class="md-form form-sm">
+                    <i class="fa fa-server prefix"></i>
+                    <input mdbInputDirective type="text" id="form19" class="form-control" data-success=" " data-error=" ">
+                    <label for="form19">Server Name</label>
+                </div>
+                <br>
+                <div class="md-form form-sm">
+                    <i class="fa fa-lock prefix"></i>
+                    <input mdbInputDirective type="text" id="form20" class="form-control" data-success=" " data-error=" ">
+                    <label for="form20">IP Address</label>
+                </div>
+                <br>
+                <div class="md-form form-sm">
+                    <i class="fa fa-user prefix"></i>
+                    <input mdbInputDirective type="text" id="form21" class="form-control" data-success=" " data-error=" ">
+                    <label for="form21">Username</label>
+                </div>
+                <br>
+                <div class="md-form form-sm">
+                    <i class="fa fa-key prefix"></i>
+                    <input mdbInputDirective type="password" id="form22" class="form-control" data-success=" " data-error=" ">
+                    <label for="form22">Password</label>
+                </div>
+                <br>
+            </div>
+            
+            <div class="modal-footer">
+              <div class="text-center mt-1-half">
+                    <button class="btn btn-indigo" mdbWavesEffect><i class="fa fa-plus mr-2"></i>Add</button>
+                </div>
+              </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+<div class="text-center">
+  <a class="btn btn-indigo waves-light float-right" mdbWavesEffect (click)="addServerModal.show()">Add</a>
+</div>

@@ -1,0 +1,344 @@
+<div class="main-wraper" style="height:1100px;">
+  <div class="container " style="height:fit-content;">
+
+    <div class="row mt-5 pt-5 float-left" style="width: inherit ;height: fit-content; ">
+
+      <div class="col" style="width: inherit; height: fit-content;">
+        <div class="card" style="width: inherit; height: fit-content;">
+
+
+          <!--Card image-->
+
+          <!--Card content-->
+          <div class="card-body">
+            <!--Title-->
+            <add-server></add-server>
+            <h4 class="card-title">Servers</h4>
+
+
+            <!--Text-->
+            <p class="card-text">Manage your servers</p>
+            <div style="overflow: auto;" style=" height: fit-content;">
+              <table class="table  table-hover header-fixed">
+
+                <!--Table head-->
+                <thead class="mdb-color indigo">
+                  <tr class="text-white">
+                    <th> </th>
+                    <th>Server</th>
+                    <th>IP</th>
+                    <th>Status</th>
+                    <th>Last check</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <!--Table head-->
+
+                <!--Table body-->
+                <tbody >
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Server1-Prod</td>
+                    <td>10.5.6.1</td>
+                    <th>Compliancy check passed</th>
+                    <th>4 mins</th>
+                    <td>
+                      <div class="btn-group btn-group-sm" role="group" aria-label="">
+                        <button type="button" class="btn btn-white btn-xs">
+                          <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                        </button>
+                        <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                        
+                        <button type="button" class="btn btn-white btn-xs">
+                          <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                        </button>
+                        <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                      </div>
+                    </td>
+
+
+                  </tr>
+                  <tr class="table-danger">
+                    <th scope="row">2</th>
+                    <td>Server2-Prod</td>
+                    <td>10.5.6.2</td>
+                    <th>Failed critical security check</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <server-manage></server-manage>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Server3-Prod</td>
+                    <td>10.5.6.3</td>
+                    <th>Compliancy check passed</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr class="table-active">
+                    <th scope="row">4</th>
+                    <td>Server4-Prod</td>
+                    <td>10.5.6.4</td>
+                    <th>Server unreachable</th>
+                    <th>33 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Server5-Prod</td>
+                    <td>10.5.6.5</td>
+                    <th>Compliancy check passed</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">6</th>
+                    <td>Server6-Prod</td>
+                    <td>10.5.6.6</td>
+                    <th>Failed multiple security checks</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">7</th>
+                    <td>Server7-Prod</td>
+                    <td>10.5.6.7</td>
+                    <th>Failed multiple security checks</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Server8-Prod</td>
+                    <td>10.5.6.8</td>
+                    <th>Compliancy check passed</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">9</th>
+                    <td>Server9-Prod</td>
+                    <td>10.5.6.9</td>
+                    <th>Failed multiple security checks</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Server10-Prod</td>
+                    <td>10.5.6.10</td>
+                    <th>Compliancy check passed</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr class="table-active">
+                    <th scope="row">11</th>
+                    <td>Server11-Prod</td>
+                    <td>10.5.6.11</td>
+                    <th>Server unreachable</th>
+                    <th>33 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr class="table-danger">
+                    <th scope="row">12</th>
+                    <td>Server12-Prod</td>
+                    <td>10.5.6.12</td>
+                    <th>Failed multiple critical security checks</th>
+                    <th>4 mins</th>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="">
+  
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-list mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                            <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-xs">
+                              <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+                            </button>
+                        </div>
+                      </td>
+                  </tr>
+
+                </tbody>
+                <!--Table body-->
+              </table>
+            </div>
+
+          </div>
+          <!-- <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div> -->
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
