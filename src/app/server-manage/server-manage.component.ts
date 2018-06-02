@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'server-manage',
@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerManageComponent implements OnInit {
 
+  @Input() server;
+  @Input() checks;
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 }

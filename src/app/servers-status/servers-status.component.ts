@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Server } from '../server';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'servers-status',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersStatusComponent implements OnInit {
 
+  @Input() servers
   constructor() { }
 
   ngOnInit() {
+  
   }
-
 }

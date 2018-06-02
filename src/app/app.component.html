@@ -2,6 +2,7 @@
 <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark indigo scrolling-navbar ie-nav" [containerInside]="false">
   <logo>
     <a class="logo navbar-brand" href="#">
+      <!-- <img src="../assets/Untropy_logo_small.png" width="27px"/> -->
       <strong>Untropy</strong>
     </a>
   </logo>
@@ -43,7 +44,7 @@
 <br><br>
 
   <!--Footer-->
-  <footer class=" footer indigo  pt-2 mt-4 mt-auto font-small sticky-footer page-footer">
+  <footer class=" footer indigo  pt-2 mt-4 mt-auto font-small sticky-footer page-footer force-to-bottom">
 
       <!--Footer Links-->
       <div class="container-fluid text-center text-md-left">
@@ -51,7 +52,7 @@
   
               <!--First column-->
               <div class="col-xs-12 col-sm-4 col-md-4">
-                  <h5 class="title">Untropy Systems</h5>
+                  <h5 class="title">Untropy System</h5>
                   <p>Your Linux Servers Secured.</p>
               </div>
               <!--/.First column-->
@@ -61,7 +62,7 @@
                   <h5 class="title">Links</h5>
                   <ul class="list-unstyled">
                       <li><a href="#">About</a></li>
-                      <li><a href="#">Contact</a></li>
+                      <li><a href="mailto:yanovsky.or@gmail.com">Contact</a></li>
 
                   </ul>
               </div>
@@ -79,5 +80,13 @@
       <!--/.Copyright-->
   </footer>
   <!--/.Footer-->
+  <!-- <div *ngFor="let server of servers">
+      {{ server | json }}
+  </div>
+
+  <div *ngFor="let check of checks">
+      {{ check | json }}
+  </div> -->
+
   
                     

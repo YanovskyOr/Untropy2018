@@ -14,7 +14,10 @@ import { AdminComponent } from './admin/admin.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AddServerComponent } from './add-server/add-server.component';
 import { ServerManageComponent } from './server-manage/server-manage.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ServersService } from './servers.service';
+import { ServerChecksComponent } from './server-checks/server-checks.component';
+import { ServerDeleteComponent } from './server-delete/server-delete.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +28,18 @@ import { ServerManageComponent } from './server-manage/server-manage.component';
     ServersComponent,
     AdminComponent,
     AddServerComponent,
-    ServerManageComponent
+    ServerManageComponent,
+    ServerChecksComponent,
+    ServerDeleteComponent
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [ ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

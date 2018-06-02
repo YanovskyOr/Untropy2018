@@ -1,0 +1,35 @@
+<div mdbModal #deleteServerModal="mdb-modal" class="modal fade" id="deleteServerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Header-->
+            <div class="modal-header red white-text align-items-center">
+                <h4 class="title"><i class="fa fa-list"></i>Confirm delete</h4>
+                
+                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="deleteServerModal.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body mb-0 force-to-bottom text-center"  style="overflow: auto; height: 170px;">
+                
+                
+                  <h5 class="">Are you sure you want to delete {{server.name}}?</h5>
+                  <br>
+                    <button type="button" class="btn btn-white waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="deleteServerModal.hide()" mdbWavesEffect>
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-red waves-effect waves-light" (click)="deleteServer(server._id)" (click)="deleteServerModal.hide()" mdbWavesEffect>
+                        Delete
+                    </button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+
+<button type="button" class="btn btn-white btn-sm" (click)="deleteServerModal.show()" mdbWavesEffect>
+    <i class="fa fa-trash mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
+</button>

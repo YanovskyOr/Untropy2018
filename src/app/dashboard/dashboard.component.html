@@ -1,5 +1,5 @@
 <div class="main-wraper">
-    <div class="container " style="height:1000px;">
+    <div class="container " style="height:1200px;">
 
       <div class="row mt-5 pt-5 float-left">
 
@@ -8,23 +8,24 @@
 
               
                 <!--Card image-->
-                
-            
-                <!--Card content-->
-                <div class="card-body">
-                    <!--Title-->
+                <div class=" card-header" >
+                                           <!--Title-->
                     <h4 class="card-title">Servers Status</h4>
                     <!--Text-->
-                    <p class="card-text">Quick view health status</p>
+                    <p class="card-text">Quick view servers status</p>
+            </div>
+                <!--Card content-->
+                <div class="card-body">
+
                     
                     <!-- <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap"> -->
-                    <servers-status></servers-status>
+                    <servers-status [servers]="servers"></servers-status>
                     
                     
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
+                  </div> -->
             </div>
 
             <br>
@@ -34,29 +35,60 @@
             <div class="card">
 
                 <!--Card image-->
-                
-            
-                <!--Card content-->
-                <div class="card-body">
+                <div class=" card-header" >
                     <!--Title-->
                     <h4 class="card-title">Health Status</h4>
                     <!--Text-->
-                    <p class="card-text">Quick view health status</p>
+                    <p class="card-text">Quick view all status</p>
+</div>
+            
+                <!--Card content-->
+                <div class="card-body">
+
                     <!-- <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap"> -->
-                    <chart-health-component></chart-health-component>
+                    <chart-health-component [servers]="servers"></chart-health-component>
                     
                     <!-- <a href="#" class="btn btn-indigo waves-light" mdbWavesEffect>Details</a> -->
 
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
+                  </div> -->
             
             </div>
         </div>
 
+        <div class="col">
+            <br><br>
+                <div class="card" style="width:300px">
+    
+                        <!-- Card image -->
+                        <img class="card-img-top animated bounce infinite" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap" style="width:300px">
+                      
+                        <!-- Card content -->
+                        <div class="card-body">
+                      
+                          <!-- Title -->
+                          <h4 class="card-title"><a>Untropy</a></h4>
+                          <!-- Text -->
+                          <p class="card-text">Untropy is a centrelized linux server security compliancy check system desinged to be simple and intuitive.</p>
+                          <!-- Button -->
+                          <!-- <a href="#" class="btn btn-primary">Button</a> -->
+                      
+                        </div>
+                      
+                      </div>
+        </div>
+
 
       </div>
-
+        
+   
     </div>
+   
+            
+    
+
+
   </div>
+
