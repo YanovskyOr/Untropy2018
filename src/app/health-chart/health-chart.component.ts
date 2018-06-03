@@ -25,8 +25,8 @@ export class HealthChartComponent implements OnInit {
     public chartColors: Array<any> = [{
         hoverBorderColor: ['rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.1)'],
         hoverBorderWidth: 0,
-        backgroundColor: ["#46BFBD", "#FDB45C", "#F7464A", "#949FB1", "#4D5360"],
-        hoverBackgroundColor: ["#5AD3D1", "#FFC870", "#FF5A5E", "#A8B3C5", "#616774"]
+        backgroundColor: ["#43A047", "#ffb74d", "#F7464A", "#949FB1", "#4D5360"],
+        hoverBackgroundColor: ["#4CAF50", "#ffcc80", "#FF5A5E", "#A8B3C5", "#616774"]
     }];
 
     public chartOptions: any = {

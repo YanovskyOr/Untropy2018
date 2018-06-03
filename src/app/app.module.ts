@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServersService } from './servers.service';
 import { ServerChecksComponent } from './server-checks/server-checks.component';
 import { ServerDeleteComponent } from './server-delete/server-delete.component';
+import { ChecksComponent } from './checks/checks.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ServerDeleteComponent } from './server-delete/server-delete.component';
     AddServerComponent,
     ServerManageComponent,
     ServerChecksComponent,
-    ServerDeleteComponent
+    ServerDeleteComponent,
+    ChecksComponent
   ],
   imports: [
     BrowserModule,

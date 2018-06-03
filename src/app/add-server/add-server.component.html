@@ -4,53 +4,56 @@
         <div class="modal-content">
 
             <!--Header-->
-            <div class="modal-header indigo white-text">
+            <div class="modal-header mdb-color darken-2 white-text">
                 <h4 class="title"><i class="fa fa-plus"></i><i class="fa fa-server"></i> Add Server</h4>
                 <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="addServerModal.hide()">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <!--Body-->
+            <form  (submit)="postServer(serverName.value,serverIp.value)" >
             <div class="modal-body mb-0" style="overflow: auto; height: 400px;" >
-                <div class="md-form form-sm">
+                    
+                <div class="md-form">
                     <i class="fa fa-server prefix"></i>
-                    <input mdbInputDirective type="text" id="form19" class="form-control" data-success=" " data-error=" ">
-                    <label for="form19">Server Name</label>
+                    <input mdbInputDirective type="search" id="serverName" class="form-control" data-success=" " data-error=" " required #serverName>
+                    <label for="serverName">Server Name</label>
                 </div>
-                <br>
-                <div class="md-form form-sm">
-                    <i class="fa fa-lock prefix"></i>
-                    <input mdbInputDirective type="text" id="form20" class="form-control" data-success=" " data-error=" ">
-                    <label for="form20">IP Address</label>
+                
+                <div class="md-form">
+                    <i class="fa fa-globe prefix"></i>
+                    <input mdbInputDirective type="search" id="serverIp" class="form-control" data-success=" " data-error=" " pattern="^(?![^\n]*\.$)(?:https?:\/\/)?(?:(?:[2][1-4]\d|25[1-5]|1\d{2}|[1-9]\d|[1-9])(?:\.(?:[2][1-4]\d|25[1-5]|1\d{2}|[1-9]\d|[0-9])){3}(?::\d{4})?|[a-z\-]+(?:\.[a-z\-]+){2,})$" required #serverIp>
+                    <label for="serverIp">IP Address</label>
                 </div>
-                <br>
-                <!-- <div class="md-form form-sm">
-                    <i class="fa fa-user prefix"></i>
-                    <input mdbInputDirective type="text" id="form21" class="form-control" data-success=" " data-error=" ">
-                    <label for="form21">Username</label>
-                </div>
-                <br>
-                <div class="md-form form-sm">
-                    <i class="fa fa-key prefix"></i>
-                    <input mdbInputDirective type="password" id="form22" class="form-control" data-success=" " data-error=" ">
-                    <label for="form22">Password</label>
-                </div>
-                <br> -->
-                <li *ngFor="let check of checks">
-                    {{check.name}}
-                </li>
+                
+                <div class="md-form">
+                    <i class="fa fa-lock prefix"></i><label>Checks</label>
+                <br><br>
+                    <div class="checkbox">
+                        
+                        
+
+                        <div  *ngFor="let check of checks; let i=index">
+                            <input type="checkbox"  (change)="selectedChecks[i]=1">
+                           {{check.name}}
+                        </div>
+                        
+                        
+                    </div>
+                    </div>
             </div>
             
             <div class="modal-footer">
               <div class="text-center mt-1-half">
-                    <button class="btn btn-indigo" mdbWavesEffect><i class="fa fa-plus mr-2"></i>Add</button>
+                    <button type="submit" class="btn mdb-color darken-2 text-white" mdbWavesEffect><i class="fa fa-plus mr-2" ></i>Add</button>
                 </div>
               </div>
+            </form>
         </div>
         <!--/.Content-->
     </div>
 </div>
 
 <div class="text-center">
-  <a class="btn btn-indigo waves-light float-right" mdbWavesEffect (click)="addServerModal.show()">Add</a>
+  <a class="btn mdb-color darken-2 waves-light float-right text-white" mdbWavesEffect (click)="addServerModal.show()" (click)="refreshChecks()" >Add Server</a>
 </div>

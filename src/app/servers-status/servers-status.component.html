@@ -7,7 +7,7 @@
     <table class="table pre-scrollable table-hover">
 
         <!--Table head-->
-        <thead class="mdb-color indigo">
+        <thead class="mdb-color mdb-color darken-2 ">
             <tr class="text-white">
                 <th></th>
                 <th>Server</th>
@@ -24,6 +24,11 @@
                 <td>{{ server.name }}</td>
                 <td>{{ server.ip}}</td>
             </tr>
+            <tr *ngIf='server.status == "warning"' class="table-warning">
+                    <th scope="row">{{ i+1 }}</th>
+                    <td>{{ server.name }}</td>
+                    <td>{{ server.ip}}</td>
+            </tr>
             <tr *ngIf='server.status == "ok"' class="table-success">
                 <th scope="row">{{ i+1 }}</th>
                 <td>{{ server.name }}</td>
@@ -34,11 +39,7 @@
                 <td>{{ server.name }}</td>
                 <td>{{ server.ip}}</td>
             </tr>
-            <tr *ngIf='server.status == "warning"' class="table-warning">
-                <th scope="row">{{ i+1 }}</th>
-                <td>{{ server.name }}</td>
-                <td>{{ server.ip}}</td>
-            </tr>
+
 
 
 
@@ -47,6 +48,6 @@
         <!--Table body-->
     </table>
     <div class="text-center force-to-bottom">
-            <a class="btn btn-indigo waves-light float-right" mdbWavesEffect routerLink="/servers" mdbWavesEffect>Details</a>
+            <a class="btn mdb-color darken-2 text-white waves-light float-right" mdbWavesEffect routerLink="/servers" mdbWavesEffect>Details</a>
     </div>
 </div>

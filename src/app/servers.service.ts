@@ -20,6 +20,11 @@ export class ServersService {
     console.log("getting checks");
     return this.http.get<Check[]>(this.ROOT_URL + '/checks');
   }
+
+  checkNow() {
+    console.log("initiating checks");
+    return this.http.get<Check[]>(this.ROOT_URL + '/servers/ssh');
+  }
   
   constructor(private http:HttpClient) { }
 

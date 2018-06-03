@@ -1,0 +1,57 @@
+<div class="main-wraper" style="height:fit-content;">
+  <div class="container " style="height:fit-content;">
+
+    <div class="row mt-5 mb-5 pt-5 float-left" style="width: inherit ;height: fit-content; ">
+
+      <div class="col" style="width: inherit; height: fit-content; ">
+        <div class="card card-cascade narrower" style="width: inherit; height: fit-content;">
+
+
+          <!--Card image-->
+
+          <!--Card content-->
+          <div class="card-body">
+            <!--Title-->
+            <h4 class="card-title">Checks</h4>
+            <!--Text-->
+            <p class="card-text">Available checks</p>
+            <div style="overflow: auto; height: fit-content;"> 
+              <table class="table table-sm table-hover header-fixed" >
+
+                <!--Table head-->
+                <thead class="mdb-color mdb-color darken-2">
+                  <tr class="text-white">
+                    <th class=""> </th>
+                    <th class="th-lg">Name</th>
+                    <th class="th-lg">Level</th>
+                    <th class="th-lg">Description</th>
+                  </tr>
+                </thead>
+                <!--Table head-->
+
+                <!--Table body-->
+                
+                  <tbody>
+                    <tr *ngFor="let check of checks; let i=index">
+                      <th scope="row">{{i+1}}</th>
+                      <td>{{check.name}}</td>
+                      <td>{{check.level}}</td>
+                      <th>{{check.description}}</th>
+                    </tr>
+                  </tbody>
+                <!--Table body-->
+              </table>
+            </div>
+          </div>
+          <!-- <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div> -->
+        </div>
+        <br><br>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

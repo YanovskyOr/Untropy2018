@@ -1,5 +1,5 @@
 <div class="main-wraper" style="height:1100px;">
-  <div class="container " style="height:fit-content;">
+  <div class="container" style="height:fit-content;">
 
     <div class="row mt-5 pt-5 float-left" style="width: inherit ;height: fit-content; ">
 
@@ -10,19 +10,22 @@
           <!--Card image-->
 
           <!--Card content-->
-          <div class="card-body">
+          <div class="card-body" >
             <!--Title-->
+            <div class="text-center">
+                <a class="btn mdb-color darken-2 waves-light float-right text-white" mdbWavesEffect (click)="checkNow()" >Check Now!</a>
+              </div>
             <add-server [checks]="checks"></add-server>
             <h4 class="card-title">Servers</h4>
 
 
             <!--Text-->
             <p class="card-text">Manage your servers</p>
-            <div style="overflow: auto;" style=" height: fit-content;">
-              <table class="table  table-hover header-fixed">
+            <div style="overflow: auto;" style="width: inherit; height: fit-content;">
+              <table class="table table-hover header-fixed" >
 
                 <!--Table head-->
-                <thead class="mdb-color indigo">
+                <thead class="mdb-color mdb-color darken-2">
                   <tr class="text-white">
                     <th> </th>
                     <th>Server</th>
@@ -49,9 +52,9 @@
                           <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
                         </button> -->
                         <server-checks [server]="server" [checks]="checks"></server-checks>
-                        <button type="button" class="btn btn-white btn-xs">
+                        <!-- <button type="button" class="btn btn-white btn-xs">
                           <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
-                        </button>
+                        </button> -->
                         <server-delete [server]="server"></server-delete>
 
                       </div>
@@ -73,9 +76,9 @@
                                 <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
                               </button> -->
                         <server-checks [server]="server" [checks]="checks"></server-checks>
-                        <button type="button" class="btn btn-white btn-xs">
+                        <!-- <button type="button" class="btn btn-white btn-xs">
                           <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
-                        </button>
+                        </button> -->
                         <server-delete [server]="server"></server-delete>
                       </div>
                     </td>
@@ -92,9 +95,9 @@
                                 <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
                               </button> -->
                         <server-checks [server]="server" [checks]="checks"></server-checks>
-                        <button type="button" class="btn btn-white btn-xs">
+                        <!-- <button type="button" class="btn btn-white btn-xs">
                           <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
-                        </button>
+                        </button> -->
                         <server-delete [server]="server"></server-delete>
                       </div>
                     </td>
@@ -111,9 +114,9 @@
                                 <i class="fa fa-info-circle mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
                               </button> -->
                         <server-checks [server]="server" [checks]="checks"></server-checks>
-                        <button type="button" class="btn btn-white btn-sm">
+                        <!-- <button type="button" class="btn btn-white btn-xs">
                           <i class="fa fa-cog mt-1 ml-2 mr-2" style="font-size:20px;color:#3f51b5;"></i>
-                        </button>
+                        </button> -->
                         <server-delete [server]="server"></server-delete>
                       </div>
                     </td>

@@ -27,6 +27,12 @@ export class ServerDeleteComponent implements OnInit {
       () => {
           console.log("The DELETE observable is now completed.");
       });
-
+      setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   }
+
+//   public reload(){
+//     window.location.reload();
+//   }
 }

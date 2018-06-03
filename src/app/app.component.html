@@ -1,7 +1,7 @@
 
-<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark indigo scrolling-navbar ie-nav" [containerInside]="false">
+<mdb-navbar SideClass="navbar animated slideInDown fixed-top navbar-expand-lg navbar-dark mdb-color darken-2 scrolling-navbar ie-nav" [containerInside]="false">
   <logo>
-    <a class="logo navbar-brand" href="#">
+    <a class="logo navbar-brand animated slideInLeft" href="#">
       <!-- <img src="../assets/Untropy_logo_small.png" width="27px"/> -->
       <strong>Untropy</strong>
     </a>
@@ -17,8 +17,11 @@
         <a class="nav-link" routerLink="/servers" >Servers</a>
       </li>
       <li class="nav-item waves-light" [routerLinkActive]="['active']" mdbWavesEffect>
+            <a class="nav-link" routerLink="/checks" >Checks</a>
+    </li>
+      <!-- <li class="nav-item waves-light" [routerLinkActive]="['active']" mdbWavesEffect>
         <a class="nav-link" routerLink="/admin" >Admin</a>
-      </li>
+      </li> -->
     </ul>
     <ul class="navbar-nav nav-flex-icons">
       <!-- <li class="nav-item waves-light" mdbWavesEffect>
@@ -37,42 +40,21 @@
 
 
 <!-- Main -->
-<main>
+<main style="height: fit-content;">
   <router-outlet></router-outlet>
 </main>
 <!-- /.Main -->
 <br><br>
 
   <!--Footer-->
-  <footer class=" footer indigo  pt-2 mt-4 mt-auto font-small sticky-footer page-footer force-to-bottom">
+  <footer class=" footer  animated slideInUp mdb-color darken-2  pt-2 pb-2 mt-4 mt-auto font-small sticky-footer page-footer force-to-bottom" style="position:fixed; width: 100%">
 
       <!--Footer Links-->
-      <div class="container-fluid text-center text-md-left">
-          <div class="row text-center text-xs-center text-sm-left text-md-left">
-  
-              <!--First column-->
-              <div class="col-xs-12 col-sm-4 col-md-4">
-                  <h5 class="title">Untropy System</h5>
-                  <p>Your Linux Servers Secured.</p>
-              </div>
-              <!--/.First column-->
-  
-              <!--Second column-->
-              <div class="col-xs-12 col-sm-4 col-md-4">
-                  <h5 class="title">Links</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#">About</a></li>
-                      <li><a href="mailto:yanovsky.or@gmail.com">Contact</a></li>
 
-                  </ul>
-              </div>
-              <!--/.Second column-->
-          </div>
-      </div>
       <!--/.Footer Links-->
   
       <!--Copyright-->
-      <div class="footer-copyright text-center py-2">
+      <div class="">
           <div class="container-fluid">
               © 2018 Copyright Untropy
           </div>

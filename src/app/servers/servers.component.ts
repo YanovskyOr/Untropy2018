@@ -53,4 +53,10 @@ export class ServersComponent implements OnInit {
       err => console.error(err), () => console.log('done loading checks for servers-page'));
   }
 
+  checkNow(){
+    this.serversService.checkNow().subscribe(
+      data => { this.checks = data },
+      err => console.error(err), () => console.log('done initiating checks'));
+  }
+
 }
