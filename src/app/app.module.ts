@@ -21,6 +21,7 @@ import { ServerDeleteComponent } from './server-delete/server-delete.component';
 import { ChecksComponent } from './checks/checks.component';
 import {QueriesModule} from './queries/queries.module';
 import {QueriesComponent} from './queries/queries/queries.component';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,14 +36,16 @@ import {QueriesComponent} from './queries/queries/queries.component';
     ServerChecksComponent,
     ServerDeleteComponent,
     ChecksComponent,
-    QueriesComponent
+    QueriesComponent,
+    
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    QueriesModule
+    QueriesModule,
+    FormsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [ ServersService],
