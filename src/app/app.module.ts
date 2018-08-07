@@ -22,6 +22,32 @@ import { ChecksComponent } from './checks/checks.component';
 import {QueriesModule} from './queries/queries.module';
 import {QueriesComponent} from './queries/queries/queries.component';
 import { FormsModule }   from '@angular/forms';
+import {SocialModule} from './social/social.module';
+import {SocialComponent} from './social/social/social.component';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from "angular5-social-login";
+
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider("Your-Facebook-app-id")
+        },
+       
+      ]
+  );
+  return config;
+}
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -37,18 +63,30 @@ import { FormsModule }   from '@angular/forms';
     ServerDeleteComponent,
     ChecksComponent,
     QueriesComponent,
+    SocialComponent
+   
     
   ],
+
+
+
+
+  
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     QueriesModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule,
+    SocialModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [ ServersService],
+  providers: [ ServersService,{
+    provide: AuthServiceConfig,
+    useFactory: getAuthServiceConfigs
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

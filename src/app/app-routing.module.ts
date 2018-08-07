@@ -6,6 +6,7 @@ import { ServersComponent } from './servers/servers.component';
 import { ChecksComponent } from './checks/checks.component';
 import { AdminComponent } from './admin/admin.component';
 import {QueriesComponent} from './queries/queries/queries.component';
+import {SocialComponent} from './social/social/social.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'servers', component: ServersComponent },
   { path: 'checks', component: ChecksComponent },
   { path: 'admin', component: AdminComponent },
-  {path: 'queries', component: QueriesComponent}
+  { path: 'queries', component: QueriesComponent},
+  { path: 'Social', component: SocialComponent }
 ];
 
 @NgModule({
