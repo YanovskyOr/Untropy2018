@@ -4,13 +4,12 @@
         <div class="col" style="width: inherit; height: fit-content;">
         <div class="card" style="width: inherit; height: fit-content;">
         <h1>Query A</h1>
-        {{diagnostic}}
-        <form (submit)="getQuerya(query.status,query.time)" #queryaForm="ngForm">
+        <form (submit)="getQuerya(querya.status,querya.time)" #queryaForm="ngForm">
             <div class="form-group">
                 <label for="status">Status</label>
                 <select class="form-control" id="status"
                  required
-                [(ngModel)]="query.status" name="status">
+                [(ngModel)]="querya.status" name="status">
                   <option *ngFor="let status of status" [value]="status">{{status}}</option>
                 </select>
               </div>
@@ -19,7 +18,7 @@
                   <label for="time">Last Check Time in Minutes</label>
                   <select class="form-control" id="time"
                    required
-                  [(ngModel)]="query.time" name="time">
+                  [(ngModel)]="querya.time" name="time">
                     <option *ngFor="let time of time" [value]="time">{{time}}</option>
                   </select>
                 </div>
@@ -32,25 +31,31 @@
 
 <div class="col" style="width: inherit; height: fit-content;">
         <div class="card" style="width: inherit; height: fit-content;">
-        <h1>Query A</h1>
+        <h1>Query B</h1>
         {{diagnostic}}
-        <form (submit)="getQuerya(query.status,query.time)" #queryaForm="ngForm">
+        <form (submit)="getQueryb(queryb.name,queryb.numofok,queryb.numofwarn,queryb.numofcrit)" #querybForm="ngForm">
             <div class="form-group">
-                <label for="status">Status</label>
-                <select class="form-control" id="status"
-                 required
-                [(ngModel)]="query.status" name="status">
-                  <option *ngFor="let status of status" [value]="status">{{status}}</option>
-                </select>
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required
+                [(ngModel)]="queryb.name" name="name">
               </div>
       
               <div class="form-group">
-                  <label for="time">Last Check Time in Minutes</label>
-                  <select class="form-control" id="time"
-                   required
-                  [(ngModel)]="query.time" name="time">
-                    <option *ngFor="let time of time" [value]="time">{{time}}</option>
-                  </select>
+                  <label for="numofok">up to X ok</label>
+                  <input type="text" class="form-control" id="numofok" required
+                  [(ngModel)]="queryb.numofok" name="numofok">
+                </div>
+
+                <div class="form-group">
+                        <label for="numofwarn">up to X warnings</label>
+                        <input type="text" class="form-control" id="numofwarn" required
+                        [(ngModel)]="queryb.numofwarn" name="numofwarn">
+                </div>
+
+                <div class="form-group">
+                        <label for="numofcrit">up to X critical</label>
+                        <input type="text" class="form-control" id="numofcrit" required
+                        [(ngModel)]="queryb.numofcrit" name="numofcrit">
                 </div>
          
           <button type="submit" class="btn btn-success">Submit</button>
