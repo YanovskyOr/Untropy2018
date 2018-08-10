@@ -18,6 +18,9 @@ export class QueriesComponent implements OnInit {
   querya =new Querya("",null);
   queryb =new Queryb("",null,null,null);
   submitted=false;
+
+  queryb_res : any;
+
   constructor(private http: HttpClient) { };
 
   getQuerya(status: string, time: number){//move to maybe service?
@@ -29,15 +32,19 @@ export class QueriesComponent implements OnInit {
 
 
   getQueryb(name: string, numofok: number,numofwarn: number,numofcrit: number){//move to maybe service?
-    
+
     let data = "/queryb"+"/"+ name +"/"+numofok+"/"+numofwarn+"/"+numofcrit;
     this.submitted=true;
-    return this.http.get(this.url+data).subscribe((data1:any[])=>{console.log(data1)});
+    return this.http.get(this.url+data).subscribe((data1=>{this.queryb_res=data1}),
+    err => console.error(err), () => console.log('got result of query b'));
   }
 
+  getQueryc(){
+    return this.http.get("http://uvo10ntf2e964aukvam.vm.cld.sr/servers/health").subscribe((data1:any[])=>{console.log(data1)});
+  }
 
-
-
+  
+  get data1(){return JSON.stringify(this.data1);}
   get diagnostic() { return JSON.stringify(this.queryb); }
 
   
