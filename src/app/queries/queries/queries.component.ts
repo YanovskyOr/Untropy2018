@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Querya } from '../querya';
 import { Queryb } from '../queryb';
+import { Querybres } from '../querybres';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class QueriesComponent implements OnInit {
   queryb =new Queryb("",null,null,null);
   submitted=false;
 
-  queryb_res : any;
+  public querybres : Querybres[];
 
   constructor(private http: HttpClient) { };
 
@@ -35,7 +36,7 @@ export class QueriesComponent implements OnInit {
 
     let data = "/queryb"+"/"+ name +"/"+numofok+"/"+numofwarn+"/"+numofcrit;
     this.submitted=true;
-    return this.http.get(this.url+data).subscribe((data1=>{this.queryb_res=data1}),
+    return this.http.get<Querybres[]>(this.url+data).subscribe((data1=>{this.querybres=data1}),
     err => console.error(err), () => console.log('got result of query b'));
   }
 
