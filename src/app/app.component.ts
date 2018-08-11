@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Server } from './server';
 import { Check } from './check';
 import { Observable } from 'rxjs/Observable';
-import { ServersService } from './servers.service'
-
+import { ServersService } from './servers.service';
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-root',

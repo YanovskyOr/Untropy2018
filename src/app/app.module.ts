@@ -30,6 +30,8 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from "angular5-social-login";
+import { HealthChartD3Component } from './health-chart-d3/health-chart-d3.component';
+import { ResultsChartD3Component } from './results-chart-d3/results-chart-d3.component';
 
 
 export function getAuthServiceConfigs() {
@@ -63,7 +65,9 @@ export function getAuthServiceConfigs() {
     ServerDeleteComponent,
     ChecksComponent,
     QueriesComponent,
-    SocialComponent
+    SocialComponent,
+    HealthChartD3Component,
+    ResultsChartD3Component
    
     
   ],
