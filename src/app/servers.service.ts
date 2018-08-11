@@ -2,6 +2,7 @@ import { Injectable, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Server } from './server';
 import { Check } from './check';
+import { Location } from './maplocation';
 import { Observable } from 'rxjs/Observable';
 import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
 
@@ -19,6 +20,11 @@ export class ServersService {
   getChecks() {
     console.log("getting checks");
     return this.http.get<Check[]>(this.ROOT_URL + '/checks');
+  }
+
+  getMapLocations(){
+    console.log("getting checks");
+    return this.http.get<Location[]>(this.ROOT_URL + '/locations');
   }
 
   checkNow() {
