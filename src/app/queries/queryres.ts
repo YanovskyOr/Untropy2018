@@ -1,4 +1,4 @@
-export interface Querybres {
+export interface Queryres {
     checks: String;
     ip: String;
     name: String;

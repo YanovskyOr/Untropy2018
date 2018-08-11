@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Querya } from '../querya';
 import { Queryb } from '../queryb';
-import { Querybres } from '../querybres';
+import { Queryres } from '../queryres';
+import { Querycres } from '../querycres';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class QueriesComponent implements OnInit {
   queryb =new Queryb("",null,null,null);
   submitted=false;
 
-  public querybres : Querybres[];
+  public queryres : Queryres[];
+  public querycres: Querycres[];
 
   constructor(private http: HttpClient) { };
 
@@ -28,7 +30,8 @@ export class QueriesComponent implements OnInit {
     
     let data = "/querya"+"/"+ status +"/"+time;
     this.submitted=true;
-    return this.http.get(this.url+data).subscribe((data1:any[])=>{console.log(data1)});
+    return this.http.get<Queryres[]>(this.url+data).subscribe((data1=>{this.queryres=data1}),
+    err => console.error(err), () => console.log('got result of query a'));
   }
 
 
@@ -36,12 +39,13 @@ export class QueriesComponent implements OnInit {
 
     let data = "/queryb"+"/"+ name +"/"+numofok+"/"+numofwarn+"/"+numofcrit;
     this.submitted=true;
-    return this.http.get<Querybres[]>(this.url+data).subscribe((data1=>{this.querybres=data1}),
+    return this.http.get<Queryres[]>(this.url+data).subscribe((data1=>{this.queryres=data1}),
     err => console.error(err), () => console.log('got result of query b'));
   }
 
   getQueryc(){
-    return this.http.get("http://uvo10ntf2e964aukvam.vm.cld.sr/servers/health").subscribe((data1:any[])=>{console.log(data1)});
+    return this.http.get<Querycres[]>("http://uvo10ntf2e964aukvam.vm.cld.sr/servers/health").subscribe((data1=>{this.querycres=data1}),
+    err => console.error(err), () => console.log('got result of query c'));
   }
 
   

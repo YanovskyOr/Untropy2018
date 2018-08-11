@@ -88,19 +88,29 @@
               </form>
     </div>
 </div>
-<tr *ngFor="let querybres of querybres; let i=index">
-        <th scope="row">{{i+1}}</th>
-        <td>{{querybres.name}}</td>
-        
-      </tr>
 <div class="col" style="width: inherit; height: fit-content;">
         <div class="card" style="width: inherit; height: fit-content;">
         <h1>Query C</h1>
         <button type="button" class="btn btn-default" (click)="getQueryc()">Query C</button>
     </div>
 </div>
+
+</div>
+<div>
+<tr *ngFor="let querycres of querycres; let i=index">
+    <th scope="row">{{i+1}}   </th>
+    <td>{{querycres._id}}     </td>
+    <td>{{querycres.count}}</td>
+  </tr>
 </div>
 </div>
+<tr *ngFor="let queryres of queryres; let i=index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{queryres.name}}</td>
+  </tr>
+
+
+    
 </div>
 
 
