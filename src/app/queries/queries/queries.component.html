@@ -1,116 +1,137 @@
-<div class="main-wraper" style="height:1100px;">
-<div class="container" style="height:fit-content;">
-        <div class="row mt-5 pt-5 float-left" style="width: inherit ;height: fit-content; ">
-        <div class="col" style="width: inherit; height: fit-content;">
-        <div class="card" style="width: inherit; height: fit-content;">
-        <h1>Query A</h1>
-        <form (submit)="getQuerya(querya.status,querya.time)" #queryaForm="ngForm">
-            <div class="form-group">
-                   
-                <label for="status">Status</label>
-                <select class="form-control" id="status"
-                 required
-                [(ngModel)]="querya.status" name="status">
-                  <option *ngFor="let status of status" [value]="status">{{status}}</option>
-                </select>
-              </div>
-      
-              <div class="form-group">
-                  <label for="time">Last Check Time in Minutes</label>
-                  <select class="form-control" id="time"
-                   required
-                  [(ngModel)]="querya.time" name="time">
-                    <option *ngFor="let time of time" [value]="time">{{time}}</option>
-                  </select>
-                </div>
-    
-                <button type="submit" class="btn btn-success"
-                [disabled]="!queryaForm.form.valid">Submit</button>
-      
-        </form>
-    </div>
-</div>
-        
 
-<div class="col" style="width: inherit; height: fit-content;">
-        <div class="card" style="width: inherit; height: fit-content;">
-        <h1>Query B</h1>
-        
-        <form (submit)="getQueryb(queryb.name,queryb.numofok,queryb.numofwarn,queryb.numofcrit)" #querybForm="ngForm">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" required
-                [(ngModel)]="queryb.name" name="name"
-                #name="ngModel">
-                <div [hidden]="name.valid "
-                     class="alert alert-danger">
-                  Name is required
+<div class="main-wraper" style="height:1100px;">
+    <div class="container" style="height:fit-content;">
+        <div class="row mt-5 pt-5 float-left" style="width: inherit ;height: fit-content; ">
+         
+            <div class="card-columns">
+                <div class="card bg-light">
+                  <div class="card-body text-center">
+                    <p class="card-text">Choose status and check time returns a list of servers</p>
+                    <form (submit)="getQuerya(querya.status,querya.time)" #queryaForm="ngForm">
+                        <div class="form-group">
+                               
+                            <label for="status">Status</label>
+                            <select class="form-control" id="status"
+                             required
+                            [(ngModel)]="querya.status" name="status">
+                              <option *ngFor="let status of status" [value]="status">{{status}}</option>
+                            </select>
+                          </div>
+                  
+                          <div class="form-group">
+                              <label for="time">Last Check Time in Minutes</label>
+                              <select class="form-control" id="time"
+                               required
+                              [(ngModel)]="querya.time" name="time">
+                                <option *ngFor="let time of time" [value]="time">{{time}}</option>
+                              </select>
+                            </div>
+                
+                            <button type="submit" class="btn btn-success"
+                            [disabled]="!queryaForm.form.valid">Submit</button>
+
+                            <div *ngFor="let queryres of queryres; let i=index">
+                                <h6>{{queryres.name}}</h6>
+                            </div>
+                  
+                    </form>
+
+
+                  </div>
                 </div>
-        
-              </div>
-      
-              <div class="form-group">
-                  <label for="numofok">up to X ok</label>
-                  <input type="number" min="0" class="form-control" id="numofok" required
-                  [(ngModel)]="queryb.numofok" name="numofok"
-                  #numofok="ngModel">
-                  <div [hidden]="numofok.valid "
-                       class="alert alert-danger">
-                    Value is required 
+                <div class="card bg-light">
+                  <div class="card-body text-center">
+                    <p class="card-text">query b </p>
+
+                    <form (submit)="getQueryb(queryb.name,queryb.numofok,queryb.numofwarn,queryb.numofcrit)" #querybForm="ngForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" required
+                            [(ngModel)]="queryb.name" name="name"
+                            #name="ngModel">
+                            <div [hidden]="name.valid "
+                                 class="alert alert-danger">
+                              Name is required
+                            </div>
+                    
+                          </div>
+                  
+                          <div class="form-group">
+                              <label for="numofok">up to X ok</label>
+                              <input type="number" min="0" class="form-control" id="numofok" required
+                              [(ngModel)]="queryb.numofok" name="numofok"
+                              #numofok="ngModel">
+                              <div [hidden]="numofok.valid "
+                                   class="alert alert-danger">
+                                Value is required 
+                              </div>
+                            </div>
+            
+                            <div class="form-group">
+                                    <label for="numofwarn">up to X warnings</label>
+                                    <input type="number" min="0" class="form-control" id="numofwarn" required
+                                    [(ngModel)]="queryb.numofwarn" name="numofwarn"
+                                    #numofwarn="ngModel">
+                                    <div [hidden]="numofwarn.valid "
+                                         class="alert alert-danger">
+                                      Value is required 
+                                    </div>
+                            </div>
+            
+                            <div class="form-group">
+                                    <label for="numofcrit">up to X critical</label>
+                                    <input type="number" min="0" class="form-control" id="numofcrit" required
+                                    [(ngModel)]="queryb.numofcrit" name="numofcrit"
+                                    #numofcrit="ngModel">
+                                    <div [hidden]="numofcrit.valid "
+                                         class="alert alert-danger">
+                                      Value is required 
+                                    </div>
+                                    
+                            </div>
+                          <button type="submit" class="btn btn-success"
+                          [disabled]="!querybForm.form.valid">Submit</button>
+
+                          <div *ngFor="let querybres of querybres; let i=index">
+                                <h6>{{querybres.name}}</h6>
+                          </div>
+                      
+                          </form>
+
                   </div>
                 </div>
 
-                <div class="form-group">
-                        <label for="numofwarn">up to X warnings</label>
-                        <input type="number" min="0" class="form-control" id="numofwarn" required
-                        [(ngModel)]="queryb.numofwarn" name="numofwarn"
-                        #numofwarn="ngModel">
-                        <div [hidden]="numofwarn.valid "
-                             class="alert alert-danger">
-                          Value is required 
-                        </div>
-                </div>
 
-                <div class="form-group">
-                        <label for="numofcrit">up to X critical</label>
-                        <input type="number" min="0" class="form-control" id="numofcrit" required
-                        [(ngModel)]="queryb.numofcrit" name="numofcrit"
-                        #numofcrit="ngModel">
-                        <div [hidden]="numofcrit.valid "
-                             class="alert alert-danger">
-                          Value is required 
-                        </div>
-                        
+
+                <div class="card  bg-light">
+                  <div class="card-body text-center">
+                    <p class="card-text">Group by  server health</p>
+                    <button type="button" class="btn btn-default" (click)="getQueryc()">Click for result</button>
+
+                    <div *ngFor="let querycres of querycres; let i=index">
+                        <h6>{{querycres._id}}    {{querycres.count}}</h6>
+     
+                    </div>
+
+                  </div>
                 </div>
-              <button type="submit" class="btn btn-success"
-              [disabled]="!querybForm.form.valid">Submit</button>
-          
-              </form>
+   
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
     </div>
 </div>
-<div class="col" style="width: inherit; height: fit-content;">
-        <div class="card" style="width: inherit; height: fit-content;">
-        <h1>Query C</h1>
-        <button type="button" class="btn btn-default" (click)="getQueryc()">Query C</button>
-    </div>
-</div>
-
-</div>
-<div>
-<tr *ngFor="let querycres of querycres; let i=index">
-    <th scope="row">{{i+1}}   </th>
-    <td>{{querycres._id}}     </td>
-    <td>{{querycres.count}}</td>
-  </tr>
-</div>
-</div>
-<tr *ngFor="let queryres of queryres; let i=index">
-    <th scope="row">{{i+1}}</th>
-    <td>{{queryres.name}}</td>
-  </tr>
-
-
-    
-</div>
+  
 
 

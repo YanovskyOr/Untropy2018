@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Querya } from '../querya';
 import { Queryb } from '../queryb';
 import { Queryres } from '../queryres';
+import { Queryares } from '../queryares';
+import { Querybres} from "../querybres";
+
 import { Querycres } from '../querycres';
 
 
@@ -12,9 +15,10 @@ import { Querycres } from '../querycres';
   styleUrls: ['./queries.component.scss']
 })
 export class QueriesComponent implements OnInit {
+  
 
   readonly url = "http://uvo10ntf2e964aukvam.vm.cld.sr/servers";
-  status =["critical","Warning","ok"];
+  status =["critical","warning","ok"];
   time=[5,10,20,30,100000];
 
   querya =new Querya("",null);
@@ -22,6 +26,9 @@ export class QueriesComponent implements OnInit {
   submitted=false;
 
   public queryres : Queryres[];
+  public querybres : Querybres[];
+  public queryares : Queryares[];
+
   public querycres: Querycres[];
 
   constructor(private http: HttpClient) { };
@@ -39,7 +46,7 @@ export class QueriesComponent implements OnInit {
 
     let data = "/queryb"+"/"+ name +"/"+numofok+"/"+numofwarn+"/"+numofcrit;
     this.submitted=true;
-    return this.http.get<Queryres[]>(this.url+data).subscribe((data1=>{this.queryres=data1}),
+    return this.http.get<Querybres[]>(this.url+data).subscribe((data1=>{this.querybres=data1}),
     err => console.error(err), () => console.log('got result of query b'));
   }
 
