@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule,ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 import { Querya } from '../querya';
 import { Queryb } from '../queryb';
@@ -15,6 +16,8 @@ import { Querycres } from '../querycres';
   styleUrls: ['./queries.component.scss']
 })
 export class QueriesComponent implements OnInit {
+  @ViewChild(NgForm) queryaForm: NgForm;
+  @ViewChild(NgForm) querybForm: NgForm;
   
 
   readonly url = "http://uvo10ntf2e964aukvam.vm.cld.sr/servers";
@@ -30,6 +33,8 @@ export class QueriesComponent implements OnInit {
   public queryares : Queryares[];
 
   public querycres: Querycres[];
+  public noResulta: Boolean = false;
+  public noResultb: Boolean = false;
 
   constructor(private http: HttpClient) { };
 
@@ -37,7 +42,18 @@ export class QueriesComponent implements OnInit {
     
     let data = "/querya"+"/"+ status +"/"+time;
     this.submitted=true;
-    return this.http.get<Queryres[]>(this.url+data).subscribe((data1=>{this.queryres=data1}),
+    return this.http.get<Queryres[]>(this.url+data).subscribe((data1=>{
+      if(data1.length == 0){
+        this.noResulta = true;
+        this.queryaForm.resetForm();
+      }
+      else{
+        this.noResulta = false;
+        this.queryres=data1;
+        this.queryaForm.resetForm();
+       
+      }
+    }),
     err => console.error(err), () => console.log('got result of query a'));
   }
 
@@ -46,12 +62,24 @@ export class QueriesComponent implements OnInit {
 
     let data = "/queryb"+"/"+ name +"/"+numofok+"/"+numofwarn+"/"+numofcrit;
     this.submitted=true;
-    return this.http.get<Querybres[]>(this.url+data).subscribe((data1=>{this.querybres=data1}),
+    return this.http.get<Querybres[]>(this.url+data).subscribe((data1=>{
+      if(data1.length == 0){
+        
+        this.noResultb = true;
+        this.querybForm.resetForm();
+      }
+      else{
+        this.noResultb = false;
+        this.queryres=data1;
+        this.querybForm.resetForm();
+      }
+    }),
+     
     err => console.error(err), () => console.log('got result of query b'));
   }
 
   getQueryc(){
-    return this.http.get<Querycres[]>("http://uvo10ntf2e964aukvam.vm.cld.sr/servers/health").subscribe((data1=>{this.querycres=data1}),
+    return this.http.get<Querycres[]>("http://uvo10ntf2e964aukvam.vm.cld.sr/servers/health").subscribe((data1=> {this.querycres=data1}),
     err => console.error(err), () => console.log('got result of query c'));
   }
 
