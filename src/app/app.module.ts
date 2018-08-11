@@ -32,6 +32,7 @@ import {
 } from "angular5-social-login";
 import { HealthChartD3Component } from './health-chart-d3/health-chart-d3.component';
 import { ResultsChartD3Component } from './results-chart-d3/results-chart-d3.component';
+import { GoogleMapsComponent } from './google-maps/google-maps.component';
 
 
 export function getAuthServiceConfigs() {
@@ -67,7 +68,8 @@ export function getAuthServiceConfigs() {
     QueriesComponent,
     SocialComponent,
     HealthChartD3Component,
-    ResultsChartD3Component
+    ResultsChartD3Component,
+    GoogleMapsComponent
    
     
   ],
