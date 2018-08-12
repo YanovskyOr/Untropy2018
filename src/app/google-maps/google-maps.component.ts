@@ -1,16 +1,18 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnChanges } from '@angular/core';
 import { Location } from '../maplocation';
 import { ServersService } from '../servers.service'
 import { } from '@types/googlemaps';
+import * as socketIo from 'socket.io-client'
 
 @Component({
   selector: 'google-maps',
   templateUrl: './google-maps.component.html',
   styleUrls: ['./google-maps.component.scss']
 })
-export class GoogleMapsComponent implements OnInit {
+export class GoogleMapsComponent implements OnInit, OnChanges {
 
   public locations: Location[];
+  isServerOk : String;
 
   constructor(private serversService: ServersService) { }
 
@@ -62,10 +64,22 @@ export class GoogleMapsComponent implements OnInit {
     // infowindow.open(this.map, marker);
   }
 
+  ngOnChanges(){
+    this.ngOnInit();
+  }
+
   getLocations() {
     this.serversService.getMapLocations().subscribe(
       data => { this.locations = data; console.log(data) },
       err => console.error(err), () => console.log("got locations"));
+
+    
+    const socket = socketIo('http://uvo10ntf2e964aukvam.vm.cld.sr')
+      socket.emit('isOk', (data) => {console.log(data)});
+      socket.on('serverOk', (data) => {this.isServerOk = data.server});
+
+      socket.emit('locations', (data) => {console.log(data)});
+      socket.on('reply', (data) => {console.log(data)});
   }
 
 }

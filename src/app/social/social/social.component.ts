@@ -47,6 +47,9 @@ export class SocialComponent implements OnInit {
     this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
     this.imageObj.src = this.imageName;
     this.draw();
+    setTimeout(() => {
+      this.draw();
+    }, 1000);
   }
 
   private draw() {

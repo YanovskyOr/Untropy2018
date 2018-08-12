@@ -4,4 +4,16 @@
     height:300px;
     background-color: grey;
     margin-bottom: 40px;
+    transition: height 2s;
+    
     }
+
+#googleMapText
+{
+    text-shadow: 1px 1px 4px indigo;
+}
+
+#googleMap:hover {
+    height: 500px;
+    transform: translate(0px, -100px);
+  }
