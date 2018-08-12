@@ -29,13 +29,13 @@
                 
                             <button type="submit" class="btn btn-success"
                             [disabled]="!queryaForm.form.valid">Submit</button>
+                           
 
-                            <div *ngFor="let queryres of queryres; let i=index">
-                                <h6>{{queryres.name}}</h6>
-                            </div>
-                  
                     </form>
-
+                    <div *ngIf="noResulta">No Results found</div>
+                    <div *ngFor="let queryres of queryres; let i=index">
+                        <h6>{{queryres.name}}</h6>
+                    </div>
 
                   </div>
                 </div>
@@ -95,6 +95,7 @@
                           <div *ngFor="let querybres of querybres; let i=index">
                                 <h6>{{querybres.name}}</h6>
                           </div>
+                          <div *ngIf="noResultb">No Results found</div>
                       
                           </form>
 
