@@ -70,7 +70,7 @@ export class QueriesComponent implements OnInit {
       }
       else{
         this.noResultb = false;
-        this.queryres=data1;
+        this.querybres=data1;
         this.querybForm.resetForm();
       }
     }),

@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
       this.getServers();
       this.getChecks();
     }, 1000 * 20);
+    
 
   }
 
@@ -45,6 +46,8 @@ export class AppComponent implements OnInit {
       data => { this.checks = data },
       err => console.error(err), () => console.log('done loading checks'));
   }
+
+  
 
 }
 
